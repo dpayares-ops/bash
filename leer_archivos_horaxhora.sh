@@ -1,6 +1,6 @@
 #!/bin/bash
 clear;
-DIR="/iis/desa/cdc/"
+DIR="/datos"
 horas=`ls -ltrh $DIR | awk '{print $8}'  | awk -F: '{print $1}' | uniq | sed '/^$/d'`
 echo "---------------------------------"
 echo "Tamaño x hora"
@@ -11,7 +11,6 @@ for i in  $horas
 	    suma=0;
         total=0;
 		archivos=$(ls -l $DIR | grep $i: | tr -s " "| cut -f 5 -d " ");
-		#echo archivos $archivos
 	while read bytes
 		do
   			suma=$((suma+bytes));
