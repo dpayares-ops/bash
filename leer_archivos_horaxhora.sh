@@ -5,7 +5,7 @@ horas=`ls -ltrh $DIR | awk '{print $8}'  | awk -F: '{print $1}' | uniq | sed '/^
 echo "---------------------------------"
 echo "Tamaño x hora"
 echo "---------------------------------"
-let acumulado=0
+acumulado=0
 for i in  $horas
 	do 
 	    suma=0;
